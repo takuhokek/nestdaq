@@ -1,0 +1,11 @@
+slowdash_project:
+  name: NestDAQ
+  title: NestDAQ Metrics
+
+  data_source:
+    type: Redis
+    parameters:
+      url: redis://localhost:6379/
+      time_series: {db: 1}
+      object: {db: 3}
+

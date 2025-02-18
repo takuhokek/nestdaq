@@ -1,0 +1,192 @@
+[
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Sampler.dir/Sampler.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/Sampler.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/Sampler.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Sink.dir/Sink.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/Sink.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/Sink.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/FileSink.dir/FileSink.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/FileSink.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/FileSink.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/STFBuilder.dir/STFBuilder.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/STFBuilder.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/STFBuilder.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/TimeFrameBuilder.dir/TimeFrameBuilder.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/TimeFrameBuilder.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/TimeFrameBuilder.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/TFBFilePlayer.dir/TFBFilePlayer.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/TFBFilePlayer.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/TFBFilePlayer.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/STFBFilePlayer.dir/STFBFilePlayer.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/STFBFilePlayer.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/STFBFilePlayer.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/TimeFrameSlicerByLogicTiming.dir/TimeFrameSlicerByLogicTiming.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/TimeFrameSlicerByLogicTiming.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/TimeFrameSlicerByLogicTiming.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/fltcoin.dir/fltcoin.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/fltcoin.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/fltcoin.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/LogicFilter.dir/LogicFilter.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/LogicFilter.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/LogicFilter.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/tfdump.dir/tfdump.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/tfdump.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/tfdump.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/RecbeDecoder.dir/RecbeDecoder.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/RecbeDecoder.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/RecbeDecoder.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/RecbeDecoder_v2.dir/RecbeDecoder_v2.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/RecbeDecoder_v2.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/RecbeDecoder_v2.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/RecbeDecoder_v3.dir/RecbeDecoder_v3.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/RecbeDecoder_v3.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/RecbeDecoder_v3.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Recbe2Slowdash.dir/Recbe2Slowdash.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/Recbe2Slowdash.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/Recbe2Slowdash.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/FilterTimeFrameSliceABC.dir/FilterTimeFrameSliceABC.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/FilterTimeFrameSliceABC.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/FilterTimeFrameSliceABC.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/FilterTimeFrameSliceBySomething.dir/FilterTimeFrameSliceBySomething.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/FilterTimeFrameSliceBySomething.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/FilterTimeFrameSliceBySomething.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/InputRegister.dir/InputRegister.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/InputRegister.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/InputRegister.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Scaler.dir/Scaler.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/Scaler.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/Scaler.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include/fairlogger/bundled -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/ScalerSQ.dir/ScalerSQ.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/ScalerSQ.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/ScalerSQ.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/AmQStrTdcSampler.dir/AmQStrTdcSampler.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/AmQStrTdcSampler.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/AmQStrTdcSampler.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairmq -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/usr/include/root -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/TriggerView.dir/TriggerView.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/TriggerView.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/TriggerView.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Utility.dir/Stoi.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/Stoi.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/Stoi.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Utility.dir/FileUtil.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/FileUtil.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/FileUtil.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Utility.dir/program_options.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/program_options.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/program_options.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Utility.dir/Timer.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/Timer.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/Timer.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Utility.dir/TaskProcessorMT.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/TaskProcessorMT.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/TaskProcessorMT.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Utility.dir/Reporter.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/Reporter.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/Reporter.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Utility.dir/UDPRBCP.cc.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/UDPRBCP.cc",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/UDPRBCP.cc"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++ -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_CONTAINER_DYN_LINK -DBOOST_CONTAINER_NO_LIB -DBOOST_DATE_TIME_DYN_LINK -DBOOST_DATE_TIME_NO_LIB -DBOOST_FILESYSTEM_DYN_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -I/opt/nestdaq/include/fairlogger/bundled -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -isystem /opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Utility.dir/BitDump.cc.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/BitDump.cc",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/BitDump.cc"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++  -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/Stoi.dir/Stoi.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/Stoi.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/Stoi.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/utility",
+  "command": "/usr/bin/c++  -I/home/dugon/Works/nestdaq/nestdaq-user-impl_my -I/opt/nestdaq/include  -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/program_options.dir/program_options.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/program_options.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/utility/program_options.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/emulator",
+  "command": "/usr/bin/c++    -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIC -fdiagnostics-color=always -std=c++17 -o CMakeFiles/AmQTdcModule.dir/AmQTdc.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/emulator/AmQTdc.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/emulator/AmQTdc.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/emulator",
+  "command": "/usr/bin/c++    -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/emulator.dir/Emulator.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/emulator/Emulator.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/emulator/Emulator.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/emulator",
+  "command": "/usr/bin/c++    -Wall -Wextra -Wshadow -Wfloat-equal -O3 -fPIE -fdiagnostics-color=always -std=c++17 -o CMakeFiles/emulator.dir/AmQTdc.cxx.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/emulator/AmQTdc.cxx",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/emulator/AmQTdc.cxx"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/sqlite",
+  "command": "/usr/bin/cc   -fPIC -fdiagnostics-color=always -o CMakeFiles/sqlite3.dir/sqlite3.c.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/sqlite/sqlite3.c",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/sqlite/sqlite3.c"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/sqlite",
+  "command": "/usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/sqlite3a.dir/shell.c.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/sqlite/shell.c",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/sqlite/shell.c"
+},
+{
+  "directory": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/build/sqlite",
+  "command": "/usr/bin/cc   -fPIE -fdiagnostics-color=always -o CMakeFiles/sqlite3a.dir/sqlite3.c.o -c /home/dugon/Works/nestdaq/nestdaq-user-impl_my/sqlite/sqlite3.c",
+  "file": "/home/dugon/Works/nestdaq/nestdaq-user-impl_my/sqlite/sqlite3.c"
+}
+]

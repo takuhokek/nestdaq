@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAmQTdcModule.a CMakeFiles/AmQTdcModule.dir/AmQTdc.cxx.o
+/usr/bin/ranlib libAmQTdcModule.a

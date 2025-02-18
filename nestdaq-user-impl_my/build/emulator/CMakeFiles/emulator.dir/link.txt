@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wshadow -Wfloat-equal -O3  -Wl,--enable-new-dtags CMakeFiles/emulator.dir/Emulator.cxx.o CMakeFiles/emulator.dir/AmQTdc.cxx.o -o emulator  -Wl,-rpath,:::::::::::::::: 

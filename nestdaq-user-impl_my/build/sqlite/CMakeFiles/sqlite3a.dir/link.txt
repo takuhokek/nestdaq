@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wl,--enable-new-dtags CMakeFiles/sqlite3a.dir/shell.c.o CMakeFiles/sqlite3a.dir/sqlite3.c.o -o sqlite3a  -Wl,-rpath,:::::::::::::::: -ldl -lpthread 

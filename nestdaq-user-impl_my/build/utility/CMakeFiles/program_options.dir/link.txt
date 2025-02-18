@@ -1,0 +1,2 @@
+/usr/bin/ar qc libprogram_options.a CMakeFiles/program_options.dir/program_options.cxx.o
+/usr/bin/ranlib libprogram_options.a

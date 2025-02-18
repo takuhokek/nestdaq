@@ -1,0 +1,2 @@
+/usr/bin/ar qc libUtility.a CMakeFiles/Utility.dir/Stoi.cxx.o CMakeFiles/Utility.dir/FileUtil.cxx.o CMakeFiles/Utility.dir/program_options.cxx.o CMakeFiles/Utility.dir/Timer.cxx.o CMakeFiles/Utility.dir/TaskProcessorMT.cxx.o CMakeFiles/Utility.dir/Reporter.cxx.o CMakeFiles/Utility.dir/UDPRBCP.cc.o CMakeFiles/Utility.dir/BitDump.cc.o
+/usr/bin/ranlib libUtility.a
