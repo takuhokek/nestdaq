@@ -2,7 +2,7 @@
     "control": {
         "range": { "length": 900 },
         "reload": 300,
-        "grid": { "rows": 1, "columns": 1 },
+        "grid": { "rows": 2, "columns": 1 },
         "mode": "normal"
     },
     "style": { },
@@ -11,6 +11,14 @@
             "type": "plot",
             "plots": [
                 { "type": "histogram2d", "channel": "Hitmap", "label": "", "format": "%.5g" }
+            ],
+            "axes": { "xfixed": false, "yfixed": false, "xlog": false, "ylog": false, "zlog": false, "colorscale": "Parula", "xmin": 0, "xmax": 200, "ymin": 0, "ymax": 50, "zmin": 0, "zmax": 1 },
+            "legend": { "style": "box" }
+        },
+        {
+            "type": "plot",
+            "plots": [
+                { "type": "histogram2d", "channel": "Hitmap_each", "label": "", "format": "%.5g" }
             ],
             "axes": { "xfixed": false, "yfixed": false, "xlog": false, "ylog": false, "zlog": false, "colorscale": "Parula", "xmin": 0, "xmax": 200, "ymin": 0, "ymax": 50, "zmin": 0, "zmax": 1 },
             "legend": { "style": "box" }

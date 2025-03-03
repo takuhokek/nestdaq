@@ -35,7 +35,7 @@ constexpr size_t Sampleclock = 32, AorTdc = 2, Ch = 48;
 std::vector<int> IDcheck = {};
 static RedisDataStore* gDB = nullptr;
 const std::string hist_name  = "Hitmap";
-const std::string hist_name2 = "Hitmap2";
+const std::string hist_name2 = "Hitmap_each";
 const std::string breakCh_name    = "Break_Ch";
 const std::string breakNum_name   = "Break_Num";
 
@@ -135,6 +135,7 @@ void writeredis2(){//hitmap2
     // データベースに書き込む
     if (gDB) {
         gDB->write(hist_name2.c_str(), Slowdashify(uhhist2));
+        std::cout << "writed to redis" << hist_name2.c_str() << std::endl;
     } else {
         std::cerr << "Error: gDB is not initialized." << std::endl;
     }
@@ -152,6 +153,7 @@ void writeredis3(){
     // データベースに書き込む
     if (gDB) {
         gDB->write(breakCh_name.c_str(), Slowdashify(breakhist));
+        
     } else {
         std::cerr << "Error: gDB is not initialized." << std::endl;
     }

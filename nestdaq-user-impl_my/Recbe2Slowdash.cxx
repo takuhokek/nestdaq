@@ -99,7 +99,7 @@ bool Recbe2Slowdash::HandleMultipartData(FairMQParts &msgParts, int index)
     // rawbuf.reserve(length);
     // int head = sizeof(TF::Header) + sizeof(STF::Header);
     // std::cout << "length: "<< length << std::endl;
-    std::cout << "PartsCount" << msgParts.Size()  << std::endl;
+    // std::cout << "PartsCount" << msgParts.Size()  << std::endl;
     unsigned char Packettype = 0, BoardID = 0;
     // unsigned short c_SentNumber = 0, c_Trigtime = 0, c_Datalength = 0, c_Upperbit = 0, c_Lowerbit = 0;
     for (const auto& msg : msgParts) {
