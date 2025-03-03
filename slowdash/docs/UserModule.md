@@ -3,10 +3,14 @@ title: User Module
 ---
 
 # Applications
-In Slow-Dash projects, user Python module can be used for:
+User Module is a Python module placed in a SlowDash project directory, and can be used for:
 
 - sending data to the web interface (table, tree, etc)
 - dispatching "command" from the web interface
+
+and as an advanced usage,
+
+- override SlowDash Web API to extend or modify it.
 
 SlowTask is an extension of the user module, and it should be good for most simple cases. User module is provided for full flexibility beyond SlowTask.
 
@@ -20,12 +24,13 @@ slowdash_project:
         KEY1: VALUE1
         ...
     data_suffix: SUFFIX
-    cgi_enabled: False
+    enabled_for_cgi: false
+    enabled_for_commandline: true
 ```
 
 [TODO] implement SUFFIX
 
-By default, user modules are not enabled if the server program is launched by CGI. To enable this, set the `cgi_enabled` parameter `True`. Be careful for all the side effects, including performance overhead and security issues. As multiple user modules can be loaded in parallel, splitting functions to a CGI-enabled module and disabled one might be a good strategy.
+By default, user modules are not enabled if the server program is launched by CGI. To enable this, set the `enabled_for_cgi` parameter `true`. Be careful for all the side effects, including performance overhead and security issues. As multiple user modules can be loaded in parallel, splitting user functions to a CGI-enabled module and disabled one might be a good strategy.
 
 ### Example
 ```yaml
@@ -52,7 +57,7 @@ def _finalize():
     
 ### Called when web clients need a list of available channels.
 # Return a list of channel struct, e.g.,  [ { "name": NAME1, "type": TYPE1 }, ... ]
-def get_channels():
+def _get_channels():
     ...
     return []
 
@@ -144,7 +149,7 @@ def _get_data(channel):
 
 # for testing
 if __name__ == '__main__':
-    print(_get_data(get_channels()[0]['name']))
+    print(_get_data(_get_channels()[0]['name']))
 ```
 
 ### Testing the module
@@ -159,18 +164,25 @@ Two queries are useful to test the module:
 $ slowdash channels
 [{ "name": "WorldClock", "type": "tree" }]
 
-$ slowdash data/WorldClock
-{ "WorldClock": { "start": 1678801863.0, "length": 3600.0, "t": 1678805463.0, "x": { "tree": {
-    "UnixTime": 1678805463.7652955,
-    "UTC": "2023-03-14T14:51:03.765296+00:00",
-    "Local": "2023-03-14T15:51:03.765296+01:00",
-    "-9h": "2023-03-14T05:51:03.765296-09:00"
-}}}}
+$ slowdash data/WorldClock --indent=4
+{
+    "WorldClock": {
+        "start": 1678801863.0,
+        "length": 3600.0,
+        "t": 1678805463.0,
+        "x": {
+            "tree": {
+                "UnixTime": 1678805463.7652955,
+                "UTC": "2023-03-14T14:51:03.765296+00:00",
+                "Local": "2023-03-14T15:51:03.765296+01:00",
+                "-9h": "2023-03-14T05:51:03.765296-09:00"
+            }
+        }
+    }
+}
 ```
-(the output above is reformatted for better readability)
 
-
-### Using it from web browser
+### Using it from a web browser
 - Start slow-dash at the project directory
 - Add a new  "Tree" panel, with channel "WorldClock".
 
@@ -210,7 +222,6 @@ Add a new HTML panel with HTML file `WorldClock`.
 
 When the `Set` button is clicked, the form data is sent to the user module as a JSON document. On the terminal screen where the slowdash command is running, you can see a message like:
 ```
-POST: /slowdash.cgi/control
 23-03-14 16:37:46 INFO: DISPATCH: {'set_time_offset': True, 'time_offset': '3'}
 ```
 
@@ -245,7 +256,7 @@ All the other callback functions, such as `_process_command()`, `_get_channels()
 
 # Tips
 ### Debug / Log Messages 
- To print debug messages from user modules, use the logging module:
+ To print debug messages from user modules, use the logging module. Direct outputs to `logging` will be included into SlowDash logging. If you do not want this, define a own logger object:
 ```python
 import logging
 logger = logging.getLogger(name)
@@ -283,7 +294,7 @@ if __name__ == '__main__':
     _finalize()
 ```
 
-For contineous execution, signal might be used to stop the thread:
+For continuous execution, signal might be used to stop the thread:
 ```python
 def stop(signum, frame):
     _halt()
@@ -294,4 +305,99 @@ if __name__ == '__main__':
     _initialize({})
     _run()
     _finalize()
+```
+
+# Advanced Topics 
+## Async user functions
+User Module functions can be either the standard (`def`) or async (`async def`). As User Module functions are executed in a dedicated thread, using `await` in `async` will not improve the overall performance much, but this allows users to use async services as described below.
+
+## Using SlowDash App Functions
+To access services implemented in the SlowDash App, such as invoking Web API and publishing streaming data, the instance of the SlowDash App can be passed to User Module if it defines the `_setup(app)` function:
+```python
+import asyncio
+
+slowdash = None
+def _setup(app):
+    global slowdash
+    slowdash = app
+
+async def _loop():
+    await slowdash.request_publish(topic='user_news', message='I am still alive')
+    await asyncio.sleep(1)
+```
+If defined, `_setup(app)` is called before `_initialize(params)`. Optionally, `_setup()` can take the second argument, `params`, which is identical to the argument passed to `_initialize()`.
+
+Note that most SlowDash App services are async, and these must be called with `await` in a `async` user function (or handle the return values properly, e.g., with `asyncio.gather()`).
+
+## Overriding SlowDash Web API
+SlowDash uses the Slowlette Web framework, described in the [Web Sever section](Slowlette.html), to handle Web API requests. If a Slowlette App instance is defined in a User Module, it will be integrated into the SlowDash Web API. This feature can be used to add new API, modify or override the existing API, using Slowlette's response aggregation mechanism. Be extremely careful on using this because modifying API can easily screw up the entire SlowDash behavior.
+
+The examples here can be found in `ExampleProjects/UserModuleSlowlette`.
+
+### Channel & Data API Extension
+Here is an example for enabling User Module to respond to data requests with a time-range  parameter. (Note that `_get_data()` callback cannot do this, as it is designed to return "current" data.)
+```python
+import slowlette
+webapi = slowlette.Slowlette()
+
+@webapi.get('/channels')
+def get_channels():
+    return [ { 'name': 'data_query', 'type': 'tree' } ]
+
+@webapi.get('/data/{channels}')
+def get_data(channels:str, length:float=None, to:float=None, resample:float=None, reducer:str=None):
+    if 'data_query' not in channels.split(','):
+        return None
+    
+    record = { "data_query": { "x": {
+        'tree': {
+            'channels': channels,
+            'length': length,
+            'to': to,
+            'resample': resample,
+            'reducer': reducer,
+        }
+    }}}
+
+    return record
+```
+Directly handling the Web API allows User Module to do anything for the request. Slowlette will distribute a web request to all the possible (matching) handlers in the system, and aggregate the multiple responses. The handler for `/channel` above returns only one channel, but the client (web browser) will receive the entire list of channels due to this aggregation mechanism. 
+
+### Config List & Content API Extension
+Here is another example, for overriding SlowDash API more aggressively. In this example, the handler for `/config/contentlist` (a request to return a list of project `config` directory contents) inserts a slowplot file entry, `slowplot-PlotLayoutOverride.json`, which actually does not exist. Then the handler for the content request (`/config/content/FIELNAME`) returns a dynamically generated content (time-series plots for all the channels, where the channel list is obtained from the SlowDash App in `_setup()`), as if the file existed in the `config` directory with that content. 
+```python
+import slowlette
+webapi = slowlette.Slowlette()
+
+channels = []
+async def _setup(slowdash):
+    global channels
+    channels = await slowdash.request_channels()
+
+    
+@webapi.get('/config/contentlist')
+def add_slowplot_PlotLayoutOverride():
+    # this entry will be "injected" into the list, through Slowlette's response aggregation
+    entries = [{
+        "type": "slowplot",
+        "name": "PlotLayoutOverride",
+        "config_file": "slowplot-PlotLayoutOverride.json",
+        "description": "Dynamically generated by UserModule"
+    }]
+
+    return entries
+
+
+@webapi.get('/config/content/slowplot-PlotLayoutOverride.json')
+def generate_slowplot_PlotLayoutOverride(request:slowlette.Request):
+    request.abort()   # stop propagation, in order not to be handled by SlowDash (no aggregation)
+
+    layout = {
+        "panels": [{
+            "type": "timeaxis",
+            "plots": [{ "type": "timeseries", "channel": ch['name'] }]
+        } for ch in channels if ch.get('type', 'numeric') == 'numeric' ]
+    }
+
+    return layout
 ```

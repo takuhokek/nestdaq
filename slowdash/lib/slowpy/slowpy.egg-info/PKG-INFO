@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: slowpy
+Version: 0.3.0
+Summary: SlowDash Python Library
+Author: Sanshiro Enomoto
+License: MIT
+Dynamic: author
+Dynamic: license
+Dynamic: summary

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!-- Created by Sanshiro Enomoto on 26 November 2021 -->
+
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>SlowDash</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" type="text/css" href="jagaimo/jagaimo.css">
+  <link rel="stylesheet" type="text/css" href="slowdash.css">
+  <link rel="stylesheet" type="text/css" id="sd-theme-css">
+</head>
+
+<body>
+  <div id="sd-header"></div>
+  <div id="sd-layout">Loading Configuration...</div>
+
+  <script type="module">
+    import { JG as $ } from './jagaimo/jagaimo.mjs';
+    import { Layout } from './layout.mjs';
+    import { boot, Frame } from './controlframe.mjs';
+
+    window.addEventListener('DOMContentLoaded', function() {
+        let defaults = {};
+        let optparse = options => options;
+        boot(defaults, optparse, start);
+    });
+
+
+    async function update_server() {
+        try {
+            let response = await fetch('./api/update/tasklist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                body: '',
+            });
+            if (! response.ok) {
+                throw new Error(response.status + " " + response.statusText);
+            }
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
+
+
+    async function start(config_arg) {
+        let config = {
+            _project: config_arg._project,
+            meta: config_arg.meta,
+            control: {
+                grid: { 'rows': 2, 'columns': 2 },
+                immutable: true,
+            },
+            layout: {
+                focus_highlight: false,
+            },
+            panels: [
+                {
+                    type: 'channellist',
+                    default_filter: '',
+                    case_sensitive: false,
+                },
+                {
+                    type: 'catalog',
+                    catalog_type: 'slowdash,slowplot,slowcruise'
+                },
+                {
+                    type: 'taskmanager',
+                },
+                {
+                    type: 'tools',
+                }
+            ]
+        };
+
+        if (config.meta?.name) {
+            document.title = 'SlowDash: ' + config.meta.name;
+        }
+        else {
+            document.title = 'SlowDash';
+        }
+        let title = config._project.project?.title || config._project.project?.name || "SlowDash";
+        if (config.meta?.title) {
+            title += " - " + config.meta.title;
+        }
+        let style = config._project.style ?? {};
+
+        $('#sd-layout').css({'width':"100%", 'margin':0, 'padding':0});
+        let layout = new Layout($('#sd-layout'), {
+            style: style,
+        });
+
+        let frame = new Frame($('#sd-header'), {
+            title: title,
+//            initialStatus: "SlowDash",
+//            initialBeat: "Version " + config._project.slowdash.version,
+            initialStatus: "SlowDash - Version " + config._project.slowdash.version,
+            style: style,
+            reloadIntervalSelection: null
+        });
+
+        update_server();
+
+        await layout.load_panels();
+        layout.configure(config);
+        layout.load({from:0, to:0}, function(status) {});
+
+        $(window).bind('resize', ()=>{
+            if (window.innerWidth > 0) {
+                layout.configure();
+            }
+        });
+    }
+
+  </script>    
+</body>

@@ -177,6 +177,15 @@ Naming convention: `set()`, `get()`, and `do_XXX()` are usual methods to do some
       - set(value=None): sends `cmd value line_terminator`, consumes echo
       - get(): sends `cmd line_terminator`, consumes echo, and returns a reply until the next prompt
 
+##### Nodes
+- **serial(port='/dev/ttyUSB0',baudrate=9600)**: sends and receives text messages through a serial port
+  - set(value): sends the value as encoded text
+  - get(): receives a chunk of text
+  - do_get_chunk(timeout=None): receives a chunk of text
+  - do_get_line(timeout=None): receives a chunk and returns one line (with reconstruction)
+  - do_flush_input(): empties the receiving buffer
+  - **scpi()** returns the same object as EthernetNode.scpi()
+
 #### HTTP (Web API)
 ##### Loading (already included)
 `ControlSystem.load_control_module('HTTP')`
@@ -250,6 +259,13 @@ Naming convention: `set()`, `get()`, and `do_XXX()` are usual methods to do some
       - **lapse()**: 
         - get(): returns the number of seconds since the last time-series point
   
+#### Other Nodes
+- Serial (uses pyserial)
+- VISA (uses pyvisa)
+- LabJack (uses LabJackPython, currently supports only U12)
+- DummyDevice
+
+
 ### Node Functions
 All the control nodes (derived from `slowpy.control.ControlNode`) have the following methods:
 
@@ -486,7 +502,7 @@ Here the parenthesis at the and of the button name indicate that this button is 
 
 SlowTask functions can take parameters:
 ```python
-def set_V0(voltage, ramping):
+def set_V0(voltage:float, ramping:float):
   #... do your work here
 ```
 and these parameter values are taken from the form input values:
@@ -498,27 +514,36 @@ and these parameter values are taken from the form input values:
 </form>
 ```
 
+By using the type notation in the SlowTask function as shown above, the parameter values are converted to the specified types. If the value literal cannot be converted to the specified type, an error response will be returned to the browser and the SlowTask function will not be called.
+
+The SlowTask function can be either the standard `def` or `async def`.
+
 It is possible to place multiple buttons in one form:
 ```html
 <form>
   Ramping: <input type="number" name="ramping" value="1" style="width:5em">/sec
   <p>
-  V0: <input type="number" name="V0" value="0"><input type="submit" name="async test.set_V0()" value="Set"><br>
-  V1: <input type="number" name="V1" value="0"><input type="submit" name="async test.set_V1()" value="Set"><br>
-  V2: <input type="number" name="V2" value="0"><input type="submit" name="async test.set_V2()" value="Set"><br>
-  V3: <input type="number" name="V3" value="0"><input type="submit" name="async test.set_V3()" value="Set"><br>
+  V0: <input type="number" name="V0" value="0"><input type="submit" name="parallel test.set_V0()" value="Set"><br>
+  V1: <input type="number" name="V1" value="0"><input type="submit" name="parallel test.set_V1()" value="Set"><br>
+  V2: <input type="number" name="V2" value="0"><input type="submit" name="parallel test.set_V2()" value="Set"><br>
+  V3: <input type="number" name="V3" value="0"><input type="submit" name="parallel test.set_V3()" value="Set"><br>
   <p>
   <input type="submit" name="test.set_all()" value="Set All">
-  <input type="submit" name="async test.stop()" value="Stop Ramping"><br>    
+  <input type="submit" name="parallel test.stop()" value="Stop Ramping"><br>    
 </form>
 ```
-In that case, some input fields might not be used by some buttons. Since all the input field values are passed to the function parameters, it may cause a Python error of unexpected parameters. To absorb the unused parameters, a best practice is always adding `**kwargs` to the SlowTask function parameters:
 ```python
-def set_V0(V0, ramping, **kwargs):
-  #... do your work here
-```
+def set_V0(V0:float, ramping:float):
+  #...
 
-In the example above, some functions have the `async` qualifier: by default, if a previous function call is in execution, a next action cannot be accepted to avoid multi-threading issues in the user code. The `async` qualifier indicates that this function call can be run in parallel to others. Another common qualifier is `await`, which instruct the GUI to wait for completion of the function execution before doing any other things (therefore it will look frozen).
+def set_V1(V1:float, ramping:float):
+  #...
+
+#...
+```
+The input values on the Web form will be bound to the function parameters based on the names (`<input name="V0">` will be bound to the `V0` parameter).
+
+In the example above, some functions have the `parallel` qualifier: by default, if a previous function call is in execution, a next action cannot be accepted to avoid multi-threading issues in the user code. The `parallel` qualifier indicates that this function can run in parallel to others. Another common qualifier is `await`, which instructs the web browser to wait for completion of the function execution before doing any other things (therefore the browser will look frozen).
 
 #### Canvas Panel
 On a canvas panel, a button to call a task can be placed by:
@@ -562,7 +587,6 @@ For functions with parameters, a form can be used:
     ...
 ```
 
-
 For more details, see the [UI Panels section](Panels.html).
 
 ## Thread Functions (Routine Task)
@@ -575,8 +599,10 @@ If a SlowTask script has functions of `_initialize(params)`, `_finalize()`, `_ru
 | `_loop()` | called repeatedly after `_initialize()`, until the user stops the system. To control the intervals, the function usually contains `time.sleep()` or equivalent. |
 | `_finalize()` | called once after `_run()` or `_loop()` |
 
-## Control Variable Binding
-Control variables (instances of the Control Node classes) can be bound to GUI elements if a SlowTask script exports them with the `_export()` function:
+These functions can be either the standard `def` or `async def`.
+
+## Control Variable Exporting
+If `_export()` is defined in the SlowTask script, control variables listed in its return value become accessible by other SlowDash components (typically web browsers), in a very simlar way as the data stored in data sources (typically databases), except that only the "curent" values are available.
 ```python
 def _export():
     return [
@@ -586,7 +612,7 @@ def _export():
       ('V3', V3)
     ]
 ```
-Here the return value is a list of tuples of (name, control_node_variable). In the GUI, the exported entries can be used in the same way as data from a database. To export a variable that is not a control node, wrapping it with a control node is easy:
+To export a variable that is not a control node, make a temporary control node variable to wrap it:
 ```python
 class RampingStatusNode(ControlNode):
     def get(self):
@@ -609,8 +635,43 @@ def _export():
         ('Status', StatusNode())
     ]
 ```
-Here the new node `StatusNode` returns a table object.
 
+## Control Variable Binding (Streaming / Live Updating)
+If an instance of `ValueNode` (which typically holds a value but not associated to any external device or object) is exported, it can push the value to receivers (typically web browsers).
+```python
+import asyncio
+from slowpy.control import ValueNode
+
+x = ValueNode(initial_value=0)
+
+async def _loop():
+    x = V0.get()
+    await x.deliver()
+    await asyncio.sleep(1)
+```
+The `deliver()` method calls `.get()` and publish the value to receivers. As `deliver()` is an async function, it must be used in an `async def` and the return value must be `await`ed.
+
+The exported variables can be "bound" in browser. If a SlowTask control variable is bound in SlowDash HTML, changes to the variable on the browser calls the `.set()` method of the SlowTask variable.
+```html
+<form>
+  <input type="range" min="0.1" max="9.9" step="0.1" sd-value="scope.fx" sd-live="true">
+  <span sd-value="scope.fx" style="font-size:150%"></span>
+  ...
+</form>
+```
+```python
+# slowtask-scope.py
+
+fx = ValueNode(initial_value=0)
+
+def _export():
+  return [ ('fx', fx) ]
+
+...
+```
+In HTML, `sd-live="true"` indicates that changes of the value on the browser will trigger calling the `.set()` method of the bound variable.
+
+An example can be found in `ExampleProjects/Streaming`.
 
 # Distributed System / Network Deployment
 ## SlowDash Interconnect

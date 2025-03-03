@@ -11,7 +11,7 @@ if [[ $1 =~ fairmq- ]]; then
   BINDIR=""
 else 
   #変えた
-  BINDIR=/home/dugon/Works/nestdaq/nestdaq-user-impl_my/install/bin/
+  BINDIR=/home/dugon/Works/nestdaq/nestdaq-user-impl_my/install/bin
   # BINDIR=/opt/nestdaq/bin
 fi
 

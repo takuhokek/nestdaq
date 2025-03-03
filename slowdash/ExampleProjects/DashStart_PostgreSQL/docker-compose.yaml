@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  pgsql_db:
+    image: postgres:16
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=SlowTestData
+
+  slowdash:
+    image: slowproj/slowdash
+    ports:
+      - "18881:18881"
+    environment:
+      - SLOWDASH_INIT_DATASOURCE_URL=postgresql://postgres:postgres@pgsql_db:5432/SlowTestData
+      - SLOWDASH_INIT_TIMESERIES_SCHEMA=ts_data[channel]@timestamp(with time zone)=value
+
+  testdata:
+    image: slowproj/slowdash
+    command: python /slowdash/utils/generate-testdata.py --db-url=postgresql://postgres:postgres@pgsql_db:5432/SlowTestData

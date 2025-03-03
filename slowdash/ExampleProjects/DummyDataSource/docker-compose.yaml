@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  slowdash:
+    image: roj/slowdash
+    volumes:
+      - .:/project
+    ports:
+      - "18881:18881"

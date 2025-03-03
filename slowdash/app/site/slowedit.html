@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<!-- Created by Sanshiro Enomoto on 26 November 2021 -->
+
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>SlowEdit</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" type="text/css" href="jagaimo/jagaimo.css">
+  <link rel="stylesheet" type="text/css" href="slowdash.css">
+  <link rel="stylesheet" type="text/css" id="sd-theme-css">
+  <script src="extern/ace-builds/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+
+<body>
+  <div id="sd-header"></div>
+  <div id="editor" style="font-size:130%"></div>
+
+  <script type="module">
+    import { JG as $ } from './jagaimo/jagaimo.mjs';
+    import { boot, Frame, upload } from './controlframe.mjs';
+
+
+    window.addEventListener('DOMContentLoaded', function() {
+        let defaults = {};
+        function optparse(options) {
+            let args = {
+                filename: options.filename ?? '',
+                status: options.status ?? null,
+                mode: options.mode ?? null,
+                theme: options.theme ?? 'github_dark',
+            };
+            return args;
+        }
+        boot(defaults, optparse, start);
+    });
+
+
+    function layout() {
+        let editorDiv = $('#editor');
+        const editorHeight = document.documentElement.clientHeight - editorDiv.pageY();
+        editorDiv.css({ 
+            position: 'relative',
+            width: '100%',
+            height: editorHeight + 'px',
+            margin: 0,
+            padding: 0,
+        });
+    }
+    $(window).bind('resize', layout);
+
+
+    function start(config) {
+        const title = config._project.project?.title || config._project.project?.name || "SlowEdit";
+        const style = config._project.style ?? {};
+        document.title = 'SlowEdit: ' + config.filename;
+
+        let frame = new Frame($('#sd-header'), {
+            title: title,
+            initialStatus: config.filename + (config.status ? ': ' + config.status : ''),
+            style: style,
+            reloadIntervalSelection: null,
+        });
+
+        layout();
+        let editor = ace.edit("editor", {
+            showPrintMargin: false,
+            //showInvisibles: true,
+        });
+        let savePopup = $('<dialog>').addClass('sd-pad').appendTo($('body'));
+        let saveButton = $('<button>').html("&#x1f4be;").bind('click', e=>{
+            upload(savePopup, 'config/file/' + config.filename, editor.getValue(), {
+                contentType: 'text/plain; charset=utf-8',
+                overwritable: true,
+                quietOnSuccess: true,
+                on_success: () => {
+                    updateServerErrorStatus();
+                    saveButton.enabled(false);
+                    editor.focus();
+                }
+            });
+        });
+        saveButton.attr('title', 'Save');
+        frame.appendButton(saveButton);
+        saveButton.enabled(false);
+
+        
+        let configureEditor = () => {
+            let setKeymap = (map) => {
+                editor.setKeyboardHandler('ace/keyboard/' + map);
+                editor.commands.addCommand({
+                    name: 'save',
+                    bindKey: {win: "Ctrl-S", "mac": "Cmd-S"},
+                    exec: (editor) => { saveButton.click(); }
+                });
+                localStorage.setItem('EditorKeyBinding', map);
+            }
+            let keymapSelect = $('<select>').bind('change', e => {
+                setKeymap($(e.target).val());
+                editor.focus();
+            });
+            keymapSelect.append($('<option>').attr('value', 'vscode').text('VSCode'));
+            keymapSelect.append($('<option>').attr('value', 'vim').text('Vim'));
+            keymapSelect.append($('<option>').attr('value', 'emacs').text('Emacs'));
+            frame.appendSelect(keymapSelect);
+            const map = localStorage.getItem('EditorKeyBinding');
+            if (map ?? false) {
+                keymapSelect.val(map);
+                setKeymap(map);
+            }
+            
+            let setWrapMode = (val) => {
+                editor.session.setUseWrapMode(val == 'on');
+                localStorage.setItem('EditorWrapMode', val);
+            }
+            let wrapModeSelect = $('<select>').bind('change', e => {
+                setWrapMode($(e.target).val());
+                editor.focus();
+            });
+            wrapModeSelect.append($('<option>').attr('value', 'off').text('Warp: off'));
+            wrapModeSelect.append($('<option>').attr('value', 'on').text('Warp: on'));
+            frame.appendSelect(wrapModeSelect);
+            const wrapMode = localStorage.getItem('EditorWrapMode');
+            if (wrapMode ?? false) {
+                wrapModeSelect.val(wrapMode);
+                setWrapMode(wrapMode);
+            }
+        };
+
+        
+        let loadContents = async () => {
+            if (! config.filename) {
+                return;
+            }
+            let response = await fetch('./api/config/file/' + config.filename);
+            if (response.status != 200) {
+                frame.setStatus(config.filename + ": " + response.statusText);
+                return;
+            }
+            const content = await response.text();
+
+            config.filetype = (function(filename) {
+                const dot = filename.lastIndexOf('.');
+                if (dot > 1) {
+                    const ext = filename.slice(dot+1).toLowerCase();
+                    if (ext == 'js') return 'javascript';
+                    if (ext == 'py') return 'python';
+                    return ext;
+                }
+                else {
+                    return '';
+                }
+            })(config.filename);
+
+            editor.setTheme('ace/theme/' + config.theme);
+            if (! config.mode) {
+                if (['json', 'yaml', 'html', 'javascript', 'python'].includes(config.filetype)) {
+                    config.mode = config.filetype;
+                }
+            }
+            if (config.mode) {
+                editor.session.setMode('ace/mode/' + config.mode);
+            }
+            if (content && (content.length > 0)) {
+                editor.setValue(content);
+                editor.gotoLine(0);
+                const meta = await updateServerErrorStatus();
+                if (meta.config_error) {
+                    editor.gotoLine(meta.config_error_line);
+                }
+            }
+            else {
+                config.status = '';
+            }
+            
+            editor.session.on('change', e => {
+                if (! saveButton.enabled()) {
+                    frame.setStatus(config.filename + ' (<i>modified</i>)<span style="color:gray">' + config.status + '</span>');
+                    saveButton.enabled(true);
+                }
+            });
+            editor.focus();
+        };
+
+        
+        let updateServerErrorStatus = async () => {
+            if (! ['json', 'yaml'].includes(config.filetype)) {
+                config.status = '';
+                return {};
+            }
+                
+            let response = await fetch('./api/config/contentlist');
+            const contentlist = await response.json();
+            for (const meta of contentlist) {
+                if (meta.config_file != config.filename) {
+                    continue;
+                }
+
+                if (meta.config_error) {
+                    config.status = ': ' + meta.config_error;
+                }
+                else {
+                    config.status = '';
+                }
+                frame.setStatus(config.filename + config.status);
+            
+                return meta;
+            }
+            
+            return {}
+        };
+
+        configureEditor();
+        loadContents();
+    }
+
+  </script>    
+</body>
+</html>

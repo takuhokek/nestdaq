@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  redis:
+    image: redis/redis-stack:7.2.0-v10
+    restart: always
+    ports:
+      - "6379:6379"
+      - "8001:8001"
+
+  slowdash:
+    image: slowproj/slowdash
+    volumes:
+      - .:/project
+    ports:
+      - "18881:18881"
+    environment:
+      - DB_URL=redis://redis:6379/12
+
+  testdata:
+    image: slowproj/slowdash
+    command: python /slowdash/utils/generate-testdata.py --db-url=redis://redis:6379/12

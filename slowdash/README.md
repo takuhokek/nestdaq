@@ -24,7 +24,7 @@ If you already have time-series data stored on a database, and have `docker-comp
 
 ## Setup and Quick Look
 
-### Docker (amd64-linux & Windows WSL)
+### Docker (Linux, Mac, Windows WSL)
 <details>
 
 #### Prerequisites for this trial
@@ -42,7 +42,7 @@ none
 #### Step 3: Start an example project
 ```
 cd slowdash/ExampleProjects/DummyDataSource
-docker-compose up
+docker compose up
 ```
 
 #### Step 4: Take a look with a browser
@@ -50,7 +50,7 @@ Open a web browser and connect to `http://localhost:18881`.
 To stop, type `ctrl`-`c` in the docker-compose window, or use `docker-compose stop` (or `down` to remove the container)
 </details>
   
-### Docker on Mac (Apple Silicon), Raspberry-Pi, etc.
+### Building a local Docker Image
 <details>
 
 #### Prerequisites for this trial
@@ -74,24 +74,24 @@ cd slowdash/ExampleProjects/DummyDataSource
 ```
 Edit `docker-compose.yaml` to change `image: slowproj/slowdash` to `image: slowdash`
 ```
-docker-compose up
+docker compose up
 ```
 
 #### Step 4: Take a look with a browser
 Open a web browser and connect to `http://localhost:18881`.
 To stop, type `ctrl`-`c` in the docker-compose window, or use `docker-compose stop` (or `down` to remove the container)
 </details>
-  
+
+
 ### Bare-Metal
 <details>
   
 #### Prerequisites for this trial
 - Git
-- Python3 (>=3.8) and packages:
-  - numpy, pyyaml, psutil
+- Python3 (>=3.9)
 
 The procedure below will create a new directory, `slowdash`. 
-Everything is fully contained under this directory, and nothing in your system (other than this directory) will be modified throughout this trial.
+Everything is fully contained under this directory, including Python modules under venv, and nothing in your system will be modified throughout this trial.
 
 #### Step 1: Clone with submodules
 ```
@@ -104,7 +104,6 @@ cd slowdash
 make
 source bin/slowdash-bashrc
 ```
-Here `make` is used only to copy some files within the `slowdash` directory. If submodules are missing, `make` will also run `git submodule update --init --recursive`.
 
 #### Step 3: Start an example project
 ```

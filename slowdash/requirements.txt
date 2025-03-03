@@ -1,0 +1,21 @@
+# SlowDash requirements #
+uvicorn
+hypercorn
+websockets
+pyyaml
+psutil
+bcrypt
+requests
+-e ./lib/slowpy
+-e ./lib/slowlette
+# DB packages #
+influxdb-client
+redis
+pymongo
+couchdb
+# packages users might use #
+numpy
+matplotlib
+pillow
+pyserial
+pyvisa

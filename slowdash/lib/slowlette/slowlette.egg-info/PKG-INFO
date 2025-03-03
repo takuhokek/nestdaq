@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: slowlette
+Version: 0.1.0
+Summary: Micro Web Framework
+Author: Sanshiro Enomoto
+License: MIT
+Dynamic: author
+Dynamic: license
+Dynamic: summary
